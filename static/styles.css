@@ -1,0 +1,58 @@
+body{
+  background-color: #352f5b;
+  display: grid;
+  place-content: center;
+}
+*{
+  list-style: none;
+}
+.container{
+  /* max-width: 450px;
+   */
+
+}
+
+input[type=text],
+input[type=text]{
+  width: 100%;
+  padding: 0.5rem;
+  font-size: larger;
+}
+input[type=text],
+input[type=text]:focus{
+  color: #fff;
+  border: none;
+  background-color: rgba(0, 0, 0, .2);
+}
+
+form.add{
+  margin-top: 0.5rem;
+}
+.trash-icon{
+  color: red;
+  font-size: x-large;
+  cursor: pointer;
+}
+li.list-group-item{
+  background-color: #423a6f;
+  color: #F8F9FA;
+  margin-block: 0.5rem;
+  font-size: large;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delete{
+  cursor: pointer;
+}
+
+label.add{
+  margin-bottom: 15px;
+  font-size: large;
+}
+
+.filtred{
+  display: none !important;
+}
