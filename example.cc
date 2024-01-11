@@ -15,7 +15,7 @@ static int count = 0;
 
     std::stringstream ss;
     ss << jsonData;
-std::string data =  R"([{"id":"0", "todo":"hello0"},{"id":"1", "todo":"hello1"},{"id":"2", "todo":"hello2"}, ])";
+std::string data =  R"([{"id":"0", "todo":"hello0"},{"id":"1", "todo":"hello1"},{"id":"2", "todo":"hello2"} ])";
 data.pop_back();
 std::string newdata = ss.rdbuf()->str();
 data += newdata;

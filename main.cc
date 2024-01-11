@@ -4,6 +4,7 @@
 #include "./src/routes/get/get.hpp"
 #include "./src/routes/delete/delete.hpp"
 #include <string>
+#include <thread>
 using namespace std;
 httplib::Server server;
 
@@ -19,9 +20,13 @@ int main(){
 
     // get all the todos
     server.Get("/todos", getTodos);
-    server.Delete("/:id", handleDelete);
+    server.Delete(R"(/delete/:id)", handleDelete);
 
     // start and listen to the server
-    server.listen("localhost",3000);
+     std::thread server_thread([&]() {
+        server.listen("localhost", 3000);
+    });
+
+    server_thread.join();
     return (0);
 }

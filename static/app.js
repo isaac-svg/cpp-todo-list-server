@@ -49,13 +49,14 @@ ul.addEventListener("click", async(e) => {
     const id = e.target.id;
     console.log(id)
     try {
-      const res = await fetch(`http://localhost:3000/${id}`,{
+      const res = await fetch(`http://localhost:3000/delete/${id}`,{
         method:"DELETE"
       })
+      console.log(await res);
       const data =  await res.json();
       console.log(data, "From server")
        TODOS = data 
-      
+      // console.log(data)
        removeFromLocalStorage(id)
        loadUI()
     } catch (error) {
@@ -92,8 +93,8 @@ async function getTodos(){
 
  try {
    const res = await fetch("http://localhost:3000/todos");
+   console.log(res)
   const data = await res.json()
-
   TODOS = data 
   addToStorage(data);
   loadUI()
@@ -112,7 +113,6 @@ function filterTodos(){
 
 
 function addToStorage(data=[]){
-  clearLocalStorage()
   localStorage.setItem("todos", JSON.stringify(data));
 
 }
